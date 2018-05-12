@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+
+    <title>Title</title>
+        <script src="{% static 'jquery-3.2.1.min.js' %}"></script>
+
+
+
+    <script src="{% static 'react/browser.min.js' %}"></script>
+    <script src="{% static 'react/react.js' %}"></script>
+    <script src="{% static 'react/react-dom.js'%}"></script>
+
+    <script src="{% static 'react/prop-types.min.js'%}"></script>
+    <script src="{% static 'react/react-redux.min.js'%}"></script>
+
+    <script type="text/babel" src="{% static 'react/App1.js'%}"></script>
+
+</head>
+<body>
+<h1>test</h1>
+<a href="home">home</a>
+<div id="app"> </div>
+<hr>
+<div id="text1"></div>
+<hr>
+<div id="tolist"></div>
+<textarea id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
+
+
+<script>
+  $(function() {
+    $('textarea#froala-editor').froalaEditor()
+  });
+</script>
+
+
+
+    <script src="{% static 'froala-editor/froala_editor.min.js.js' %}"></script>
+    <script type="text/babel" src="{% static 'froala-editor/froala_editor.css'%}"></script>
+    <script type="text/babel" src="{% static 'froala-editor/froala_style.min.css'%}"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'react/browser.min.js' %}"></script>
+    <script src="{% static 'react/react.js' %}"></script>
+    <script src="{% static 'react/react-dom.js'%}"></script>
+
+    <script src="{% static 'react/prop-types.min.js'%}"></script>
+    <script src="{% static 'react/react-redux.min.js'%}"></script>
+
+    <script type="text/babel" src="{% static 'react/Tolist.js'%}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'react/todoList.css' %}">
+
+</head>
+<body>
+<a href="home">home</a>
+<h1>to list</h1>
+<div id="container"></div>
+</body>
+<style>
+body{
+   padding:50px;
+   background-color:#F6CCFF;
+}
+#container{
+ display:flex;
+ justify-content:center;
+}
+
+</style>
+</html>

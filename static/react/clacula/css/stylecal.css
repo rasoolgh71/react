@@ -1,0 +1,79 @@
+body {
+    background-color: $smoke;
+    font-family: $font-family;
+}
+.btn {
+    cursor: pointer;
+}
+.calculator {
+    background-color: #EAEAEA;
+    padding: 0 10;
+}
+.control-panel > button {
+    background-color: #F2F2F2;
+}
+
+.display {
+    background-color: #fff;
+    height: 100px;
+    word-wrap: break-word;
+}
+.history {
+    background-color: #fff;
+    position: relative;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.history .history-item > button {
+    border-radius: 0;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.history .history-item > button:hover {
+    background-color: rgb(177, 243, 245);
+}
+
+.history-trash {
+    cursor: pointer;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+}
+
+
+.keypad {
+    height: 400px;
+}
+
+.keypad-row {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.keypad-row > button {
+    font-size: 1.6rem;
+    margin: 2px;
+    overflow: hidden;
+    height: 60px;
+    width: 100%;
+}
+
+.keypad-primary-btn {
+    background-color: #FBFBFB;
+    color: #20232A;
+    font-weight: bold;
+}
+
+.keypad-secondary-btn {
+    background-color: #F2F2F2;
+    color: #00ACC1;
+}
+
+.header {
+    height: 100px;
+}

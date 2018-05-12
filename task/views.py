@@ -8,5 +8,17 @@ def home(request):
 def react1(request):
     return render(request,'task/react1.html')
 
-def test(request):
-    return render(request,'task/test.html')
+def react2(request):
+    return render(request,'task/react2.html')
+
+def tolist(request):
+    return render(request,'task/tolist.html')
+
+def transation(request):
+    return render(request,'task/transition.html')
+
+def watch(request):
+    return render(request,'task/watch.html')
+
+def calculate(request):
+    return render(request,'task/calculate.html')
