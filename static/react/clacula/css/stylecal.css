@@ -1,13 +1,12 @@
 body {
-    background-color: $smoke;
-    font-family: $font-family;
+    background-color: rgba(0,0,200,.3);
+    font-family:;
 }
 .btn {
     cursor: pointer;
 }
 .calculator {
     background-color: #EAEAEA;
-    padding: 0 10;
 }
 .control-panel > button {
     background-color: #F2F2F2;
@@ -60,7 +59,7 @@ body {
     margin: 2px;
     overflow: hidden;
     height: 60px;
-    width: 100%;
+    width: 60px;
 }
 
 .keypad-primary-btn {
@@ -75,5 +74,5 @@ body {
 }
 
 .header {
-    height: 100px;
+    height: 70px;
 }

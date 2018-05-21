@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+//import React from 'react';
+//import PropTypes from 'prop-types';
 
 const Header = (props) => (
     <nav className="header navbar navbar-dark bg-dark">
@@ -20,4 +20,4 @@ Header.propTypes = {
     title: PropTypes.string
 };
 
-export default Header;
+//export default Header;

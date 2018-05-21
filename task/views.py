@@ -14,11 +14,15 @@ def react2(request):
 def tolist(request):
     return render(request,'task/tolist.html')
 
-def transation(request):
-    return render(request,'task/transition.html')
+def markdown(request):
+    return render(request,'task/markdown.html')
 
 def watch(request):
     return render(request,'task/watch.html')
 
 def calculate(request):
     return render(request,'task/calculate.html')
+
+
+def datashet(request):
+    return render(request,'task/datashet.html')

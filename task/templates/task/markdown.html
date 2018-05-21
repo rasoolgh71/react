@@ -1,32 +1,33 @@
-{% load static %}
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
 
-<script src="{% static 'react/react.js'%}"></script>
-<script src="{% static 'react/react-dom.js'%}"></script>
-<script src="{% static 'react/browser.min.js'%}"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'react/browser.min.js' %}"></script>
+    <script src="{% static 'react/react.js' %}"></script>
+    <script src="{% static 'react/react-dom.js'%}"></script>
 
-<script type="text/babel" src="{% static 'react/trans1.js'%}"></script>
+    <script src="{% static 'react/prop-types.min.js'%}"></script>
+    <script src="{% static 'react/react-redux.min.js'%}"></script>
+
+     <script src="{% static 'markdown/remarkable.min.js'%}"></script>
 
 
-<div class="clearfix"></div>
+     <link rel="stylesheet" type="text/css" href="{%static 'markdown/markdown.css'%}" />
+     <script type="text/babel" src="{% static 'markdown/markdown.js'%}"></script>
+
+
+
+</head>
+<body>
 <a href="home">home</a>
-<div id="saeeds" style="padding:20px;">
-<div id="node"></div>
-
-</div>
-<script type="text/babel">
+<div id="mark"></div>
+<div id="markdown"></div>
 
 
-
-</script>
-<style>
-  .btn{    margin: 0 5px;
-    padding: 0px 13px;
-    font-size: 25px;}
-.input{    border: solid 1px #9e9e9e;
-    color: #000;
-    margin-bottom: 8px;
-    height: 48px;
-    padding-left: 6px;}
-</style>
+</body>
+</html>
 
 

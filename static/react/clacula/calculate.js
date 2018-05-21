@@ -1,18 +1,177 @@
 
-class App extends React.Component{
-   render(){
-     return(
-         <div style={{overflow: 'hidden'}}>
-            <Header title='React Calc' />
-            <div className="mt-md-5">
-                <Calculator />
-            </div>
-         </div>
-     )
-   }
-};
+let currentValue = '';
+let register = [];
+let history = [];
+let result = '';
 
-class Calculator extends React.Component {
+class CalculatorEngine {
+
+    constructor(){
+        history = [],
+        register = [];
+        currentValue = '';
+        result = '';
+    }
+
+    inputDigit(digit) {
+        if (isNaN(digit)) {
+            throw Error('Only numeric input is allowed');
+        }
+
+        if (result !== '') {
+            result = '';
+            currentValue = '';
+        }
+
+        currentValue += digit;
+    }
+
+    inputDecimal() {
+        if (result !== '') {
+            result = '';
+            currentValue = '';
+        }
+
+        if (currentValue.indexOf('.') >= 0) {
+            return;
+        }
+
+        if (currentValue === '') {
+            currentValue += '0.';
+        } else {
+            currentValue += '.';
+        }
+    }
+
+    clear() {
+        currentValue = '';
+        register = [];
+        result = '';
+    }
+
+    clearAll() {
+        currentValue = '';
+        register = [];
+        result = '';
+        history = [];
+    }
+
+    clearHistory() {
+        history = [];
+    }
+
+    delete() {
+        if (currentValue === '') {
+            return;
+        }
+
+        currentValue = currentValue.substring(0, currentValue.length - 1);
+    }
+
+    add() {
+        if (currentValue === '') {
+            return;
+        }
+
+        register.push(currentValue);
+        register.push('+');
+
+        currentValue = '';
+    }
+
+    subtract() {
+        if (currentValue === '') {
+            return;
+        }
+
+        register.push(currentValue);
+        register.push('-');
+
+        currentValue = '';
+    }
+
+    multiply() {
+        if (currentValue === '') {
+            return;
+        }
+
+        register.push(currentValue);
+        register.push('*');
+
+        currentValue = '';
+    }
+
+    divide() {
+        if (currentValue === '') {
+            return;
+        }
+
+        register.push(currentValue);
+        register.push('/');
+
+        currentValue = '';
+    }
+
+    equals() {
+        if (currentValue === '') {
+            return;
+        }
+
+        register.push(currentValue);
+
+        const expression = register.join(' ');
+
+        result = math.eval(expression);
+        currentValue = result.toString();
+        history.splice(0, 0, { expression, result });
+        register = [];
+    }
+
+    loadHistory(index) {
+        currentValue = history[index].result.toString();
+    }
+
+    toggleSign() {
+        currentValue = (parseFloat(currentValue) * (-1)).toString();
+    }
+
+    getValue() {
+        return currentValue;
+    }
+
+    getExpression() {
+        return register.join(' ');
+    }
+
+    getHistory() {
+        return history;
+    }
+
+    getResult() {
+        return result;
+    }
+}
+
+class App extends React.Component{
+     constructor(props){
+       super(props)
+     }
+     render(){
+        return(
+              <div style={{overflow: 'hidden'}}>
+                  <Header title='React Calc' />
+                  <div className="mt-md-5">
+                   <Calculator/>
+                   </div>
+              </div>
+        )
+    }
+}
+
+const calculator = new CalculatorEngine();
+
+
+class  Calculator extends React.Component {
 
     constructor(props) {
         super(props);
@@ -210,59 +369,21 @@ class Calculator extends React.Component {
 }
 
 const Header = (props) => (
-    <nav className="header navbar navbar-dark bg-dark">
-        <div className="container">
-            <div className="row mx-auto">
-                <i className="fa fa-calculator fa-3x text-white my-auto"></i>
-                <div className="h3 ml-3 my-auto text-light">{props.title}</div>
-            </div>
-        </div>
-    </nav>
+           <nav className="header navbar navbar-dark bg-dark">
+             <div className="container">
+                 <div className="row mx-auto">
+                     <i className="fa fa-calculator fa-3x text-white my-auto"></i>
+                     <div className="h3 ml-3 my-auto text-light">{props.title}</div>
+                 </div>
+             </div>
+           </nav>
 );
-
 Header.defaultProps = {
     title: 'App'
 };
 
 Header.propTypes = {
     title: PropTypes.string
-};
-
-const Display = (props) => (
-    <div className="mt-md-2" style={{position: 'relative'}}>
-        <div className="pr-2 h4" style={{position: 'absolute', top: 0, right: 0}}>{props.expression}</div>
-        <div className="display text-right pr-2 h3 d-md-none d-sm-block pt-5">{props.value}</div>
-        <div className="display text-right pr-2 h1 d-none d-lg-none d-md-block pt-4">{props.value}</div>
-        <div className="display text-right pr-2 display-4 d-none d-lg-block pt-4">{props.value}</div>
-    </div>
-);
-
-Display.defaultProps = {
-    expression: '',
-    value: '0'
-};
-
-Display.propTypes = {
-    expression: PropTypes.string,
-    value: PropTypes.string
-};
-
-const ControlPanel = (props) => (
-    <div className="control-panel my-2 mx-1">
-        <button className="btn btn-block text-secondary" disabled={!props.anyHistory} onClick={props.onToggleHistory}>
-            <i className="fa fa-history fa-2x"></i>
-        </button>
-    </div>
-);
-
-ControlPanel.defaultProps = {
-    anyHistory: false,
-    onToggleHistory: () => alert('toggle history')
-};
-
-ControlPanel.propTypes = {
-    anyHistory: PropTypes.bool,
-    onToggleHistory: PropTypes.func
 };
 
 const Keypad = (props) => {
@@ -333,6 +454,43 @@ Keypad.propTypes = {
     onDivide: PropTypes.func,
     onMultiply: PropTypes.func,
     onToggleSign: PropTypes.func
+};
+
+const Display = (props) => (
+    <div className="mt-md-2" style={{position: 'relative'}}>
+        <div className="pr-2 h4" style={{position: 'absolute', top: 0, right: 0}}>{props.expression}</div>
+        <div className="display text-right pr-2 h3 d-md-none d-sm-block pt-5">{props.value}</div>
+        <div className="display text-right pr-2 h1 d-none d-lg-none d-md-block pt-4">{props.value}</div>
+        <div className="display text-right pr-2 display-4 d-none d-lg-block pt-4">{props.value}</div>
+    </div>
+);
+
+Display.defaultProps = {
+    expression: '',
+    value: '0'
+};
+
+Display.propTypes = {
+    expression: PropTypes.string,
+    value: PropTypes.string
+};
+
+const ControlPanel = (props) => (
+    <div className="control-panel my-2 mx-1">
+        <button className="btn btn-block text-secondary" disabled={!props.anyHistory} onClick={props.onToggleHistory}>
+            <i className="fa fa-history fa-2x"></i>
+        </button>
+    </div>
+);
+
+ControlPanel.defaultProps = {
+    anyHistory: false,
+    onToggleHistory: () => alert('toggle history')
+};
+
+ControlPanel.propTypes = {
+    anyHistory: PropTypes.bool,
+    onToggleHistory: PropTypes.func
 };
 
 const History = (props) => (
