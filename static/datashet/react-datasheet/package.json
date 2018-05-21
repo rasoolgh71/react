@@ -1,0 +1,134 @@
+{
+  "_args": [
+    [
+      "react-datasheet",
+      "/home/parspooyesh/package"
+    ]
+  ],
+  "_from": "react-datasheet@latest",
+  "_id": "react-datasheet@1.3.6",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-datasheet",
+  "_nodeVersion": "8.3.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/react-datasheet_1.3.6_1525705090870_0.9940177844310945"
+  },
+  "_npmUser": {
+    "email": "i.nadim@gmail.com",
+    "name": "nadbm"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "react-datasheet",
+    "raw": "react-datasheet",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-datasheet/-/react-datasheet-1.3.6.tgz",
+  "_shasum": "0c8d1f89f28054db9413f502f917ca5b43b21979",
+  "_shrinkwrap": null,
+  "_spec": "react-datasheet",
+  "_where": "/home/parspooyesh/package",
+  "author": {
+    "name": "Nadim Islam"
+  },
+  "bugs": {
+    "url": "https://github.com/nadbm/react-datasheet/issues"
+  },
+  "dependencies": {},
+  "description": "Excel-like data grid for React",
+  "devDependencies": {
+    "@types/react": "^16.0.38",
+    "babel-cli": "^6.6.4",
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.0",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "chai": "^3.5.0",
+    "coveralls": "^2.13.0",
+    "cross-env": "^4.0.0",
+    "enzyme": "^2.2.0",
+    "eslint": "^2.7.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-react": "^4.2.3",
+    "expect": "^1.20.2",
+    "jsdom": "^8.1.0",
+    "mocha": "^2.4.5",
+    "mocha-jsdom": "^1.1.0",
+    "nodemon": "^1.9.1",
+    "nyc": "^10.2.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.0.0",
+    "react-addons-test-utils": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "rimraf": "^2.6.1",
+    "sinon": "^1.17.3",
+    "standard": "*",
+    "watch": "^1.0.2"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 16,
+    "integrity": "sha512-tgP/4tsDNhum+630ctRJV3Zvv68gDCDOXbf7kjMtS5yQ0udYkvJnWsz2szLBdNBj3yYtOH9GseH9qV2LB2ww3g==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8GmECRA9TVsSAnZWagAAZYwP/3oGOOmISnnMsnw+jfeK\n+R3M7Yp0S6s1/SwccYhZwwjDlrVLProuJnqFuwu5FSR/Leo2kzQcCs55Mw3n\nRAAWCpa52tU37pY4sGb7DpGSLnszGcLT/kUOYAs8XEDUv7cU8sj8SG4bYDlp\nEUUFiw4cLPENybqy39Jge+NNcdrbvf09sigQgo0AacFk4zaeT5oPkGSRCc5+\nVW5xrRy6KPvc2pFrgzWjVWiiLZdrJ7+O/HdyQeWJqnvpC/Q/Mb475EOGIAbp\n4PPuW3gswF6QLU2N60Rd5R7LXfjxaLQsPSoyJ1elY+wK5j5qtmW3orj0evp4\nrTESch6EXOBJQIMpmWXgSqbSSkJT09UXy+qkAWtv9ZFKz+OuotiCkOexbBKr\nnwh+SON/ZVWtGnHXad64Fn8TISjpnZrJ/5V5+qvDW8thSrVP92Ge5UNbWfV4\nORSdBWmLEn7E6QcQtbeANdJxtN+XWHclKm+UCD2kxhNE8tLRr224OLHAq2wf\nNRufqkjIoFBPI9xZEoOiCV+FfS4N1R2CNnyqSXCbr/OvAPOuhm/sL8OmLskL\nxBnpPQlA+BVALlSMakEHQRwbStqdWHu69Z2aeDEgAZgaHSDksF56Er6vrDcr\nFh8+a6NSupYsZjCu+H6UBGDynZgrvxjgMW/LSdYwXIco0n1syMnjGwNGq0qf\nXlDZ\r\n=CZiU\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "0c8d1f89f28054db9413f502f917ca5b43b21979",
+    "tarball": "https://registry.npmjs.org/react-datasheet/-/react-datasheet-1.3.6.tgz",
+    "unpackedSize": 96875
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "gitHead": "25f7944c633a0593a9755b8d08445e1a31ed9bb4",
+  "homepage": "https://github.com/nadbm/react-datasheet#readme",
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "maintainers": [
+    {
+      "name": "nadbm",
+      "email": "nadim@wearhacks.com"
+    }
+  ],
+  "name": "react-datasheet",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "prop-types": "^15.5.9",
+    "react": ">=15.3.0",
+    "react-dom": ">=15.3.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadbm/react-datasheet.git"
+  },
+  "scripts": {
+    "build": "babel ./src  --out-dir ./lib && cp src/react-datasheet.css lib",
+    "build:watch": "watch 'npm run build' ./src",
+    "clean": "rimraf dist",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint ./src",
+    "lintfix": "eslint ./src --fix",
+    "prepublish": "npm run build",
+    "std": "standard src/*.js",
+    "stdfix": "standard src/*.js --fix",
+    "test": "standard src/*.js && NODE_ENV=test nyc --  mocha ./test/**/*.js --compilers js:babel-register",
+    "test:watch": "watch 'npm run test' ./test ./src"
+  },
+  "types": "types/react-datasheet.d.ts",
+  "version": "1.3.6"
+}
