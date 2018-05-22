@@ -255,6 +255,7 @@ Header.defaultProps = {
 Header.propTypes = {
     title: PropTypes.string
 };
+
 const Display = (props) => {
 
     const time = new Time();
